@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Professor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Cadastro de Professor</h1>
+        <form id="formCadastro" onsubmit="return validarFormulario(event)">
+            <div class="campo">
+                <label for="nome">Nome completo:</label>
+                <input type="text" id="nome" name="nome" required>
+            </div>
+
+            <div class="campo">
+                <label for="dataNascimento">Data de nascimento:</label>
+                <input type="date" id="dataNascimento" name="dataNascimento" required>
+            </div>
+
+            <div class="campo">
+                <label for="cpf">CPF:</label>
+                <input type="text" id="cpf" name="cpf" required>
+            </div>
+
+            <div class="campo">
+                <label for="rg">RG:</label>
+                <input type="text" id="rg" name="rg" required>
+            </div>
+
+            <div class="campo">
+                <label for="endereco">Endereço completo:</label>
+                <input type="text" id="endereco" name="endereco" required>
+            </div>
+
+            <div class="campo">
+                <label for="telefone">Número de telefone:</label>
+                <input type="tel" id="telefone" name="telefone" required>
+            </div>
+
+            <div class="campo">
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <!-- Novo campo de senha -->
+            <div class="campo">
+                <label for="senha">Senha:</label>
+                <input type="password" id="senha" name="senha" required>
+            </div>
+
+            <div class="campo">
+                <label>Disciplinas:</label>
+                <div class="accordion">
+                    <button type="button" class="accordion-btn">
+                        <span id="iconAccordion">+</span> Selecione as Disciplinas
+                    </button>
+                    <div class="accordion-content">
+                        <label><input type="checkbox" name="disciplinas" value="MAT01"> MAT01</label>
+                        <label><input type="checkbox" name="disciplinas" value="MAT02"> MAT02</label>
+                        <label><input type="checkbox" name="disciplinas" value="MAT03"> MAT03</label>
+                        <label><input type="checkbox" name="disciplinas" value="MAT04"> MAT04</label>
+                        <label><input type="checkbox" name="disciplinas" value="MAT05"> MAT05</label>
+                        <label><input type="checkbox" name="disciplinas" value="MAT06"> MAT06</label>
+                        <label><input type="checkbox" name="disciplinas" value="MAT07"> MAT07</label>
+                        <label><input type="checkbox" name="disciplinas" value="MAT08"> MAT08</label>
+                        <label><input type="checkbox" name="disciplinas" value="MAT09"> MAT09</label>
+                        <label><input type="checkbox" name="disciplinas" value="MAT10"> MAT10</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="campo">
+                <label for="regimeContratacao">Regime de contratação:</label>
+                <select id="regimeContratacao" name="regimeContratacao" required>
+                    <option value="CLT">CLT</option>
+                    <option value="Estatutário">Estatutário</option>
+                    <option value="Contrato de Trabalho">Contrato de Trabalho</option>
+                    <option value="Outros">Outros</option>
+                </select>
+            </div>
+
+            <button type="submit">Cadastrar</button>
+        </form>
+        <div class="search-section">
+            <h3>Buscar Professor</h3>
+            <div class="search-input">
+                <input type="text" id="searchInput" placeholder="Nome, Email, Telefone">
+                <button onclick="buscarAluno()">Buscar</button>
+            </div>
+        </div>
+
+        <div class="students-list">
+            <h3>Lista de Professores</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Email</th>
+                        <th>Telefone</th>
+                        <th>ações</th>
+                        <tr>professores cadastrados</tr>
+                    </tr>
+                </thead>
+                <tbody id="tabelaAlunos"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
