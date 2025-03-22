@@ -1,4 +1,10 @@
-/* Geral */
+/*CADASTRO ALUNO*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
@@ -7,42 +13,29 @@ body {
 }
 
 .header-container {
-    background-color: #779ecb;
-    color: white;
-    padding: 10px 20px;
-    text-align: center;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.header-container {
-    width: 100%;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-header-container {
     position: fixed;
     top: 0;
     left: 0;
+    margin: 0 auto;
     width: 100%;
     background-color: #779ecb;
     color: white;
     padding: 10px 20px;
     text-align: center;
-    display: flex;
+    display: none;
     justify-content: space-between;
     align-items: center;
     z-index: 1000; /* Para garantir que fique acima de outros elementos */
 }
 
-
 h1 {
     font-size: 1.8em;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 nav ul {
+    flex-direction: column;
     list-style-type: none;
     display: flex;
     padding: 0;
@@ -66,6 +59,7 @@ footer {
     color: white;
     text-align: center;
     padding: 20px 0;
+    margin-top: 30px;
 }
 
 .footer-container {
@@ -184,12 +178,65 @@ input:valid {
 select {
     padding: 8px;
 }
+/* _____________________________________________________________________________________________________________________________________________________ */
+/* CADASTRO DISCIPLINA */
 
-footer {
-    margin-top: 30px;
+.container {
+    margin-top: 70px; /* Para compensar o header fixo */
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-/* Responsividade */
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.campo {
+    margin-bottom: 15px;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    background-color: #779ecb;
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #5b7ea6;
+}
+
+button:focus {
+    outline: none;
+}
+/* _____________________________________________________________________________________________________________________________________________________ */
+/* RESPONSIVIDADE */
 @media (max-width: 768px) {
     .header-container {
         flex-direction: column;
@@ -200,8 +247,23 @@ footer {
         margin-bottom: 10px;
     }
 
-    nav ul {
+    footer nav ul {
         flex-direction: column;
+    }
+}
+@media screen and (max-width: 600px) {
+    .container {
+        width: 90%;
+    }
+}
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .header-container h1 {
+        margin-bottom: 10px;
     }
 
     footer nav ul {
