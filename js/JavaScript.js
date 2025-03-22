@@ -1,3 +1,30 @@
+//SEÇÕS
+document.addEventListener("DOMContentLoaded", function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const formType = urlParams.get('form');
+
+    //Usado para inicialemente ocultar as seções
+    document.querySelectorAll('section').forEach(section => {
+        section.classList.add('ocultar');
+    });
+
+    //Usado para mostrar a seção correspondente ao escolhido no index 
+    if (formType === 'aluno') {
+        document.getElementById('formularioAluno').classList.remove('ocultar');
+        document.getElementById('formularioAluno').classList.add('mostrar');
+    } else if (formType === 'professor') {
+        document.getElementById('formularioProfessor').classList.remove('ocultar');
+        document.getElementById('formularioProfessor').classList.add('mostrar');
+    } else if (formType === 'disciplina') {
+        document.getElementById('formularioDisciplina').classList.remove('ocultar');
+        document.getElementById('formularioDisciplina').classList.add('mostrar');
+    } else if (formType === 'turma') {
+        document.getElementById('formularioTurma').classList.remove('ocultar');
+        document.getElementById('formularioTurma').classList.add('mostrar');
+    }
+    
+});
+//==================================================================================================================================
 //CADASTRO ALUNO 
 document.addEventListener("DOMContentLoaded", function() {
     const form = document.querySelector("form");
