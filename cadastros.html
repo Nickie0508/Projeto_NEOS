@@ -4,14 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastros</title>
+    <link rel="icon" href="./Img/icon.png">
     <link rel="stylesheet" href="./Style/cadastros.css">
     <script src="./JavaScript/JavaScript.js"></script>
 </head>
 <header>
+<!--BARRA DE NAVEGAÇÃO-->
     <div class="header-container">
-        <h1>NEOS Education</h1>
-        <nav>
-            <ul>
+        <h1 id="titulo">NEOS Education</h1>
+        <nav class="navbar">
+            <ul class="nav-links">
                 <li><a href="./index.html">Início</a></li>
                 <li><a href="NEOS">Sobre</a></li>
                 <li><a href="Contato">Contato</a></li>
@@ -19,7 +21,8 @@
         </nav>
     </div>
 </header>
-<!--CADASTRO ALUNO-->
+<!------------------------------------------------------------------------------------------------------------------------>
+<!--CADASTRO DE ALUNOS-->
 <body>
     <main>
         <section id="formularioAluno">
@@ -31,174 +34,277 @@
                 </h3>
             </div>
 
-            <form>
-                <h4>Formulário de Matrícula</h4>
+        <form>
+            <h4>Formulário de Matrícula</h4>
 
-                <fieldset>
-                    <legend>Dados Pessoais</legend>
-
-                    <div class="form-group">
-                        <label for="nomeAluno">Nome completo:</label>
-                        <input type="text" id="nomeAluno" name="nome" pattern="[A-Za-záàãâéêíóôõúçÁÀÃÂÉÊÍÓÔÕÚÇ\s]+" placeholder="Digite o seu nome completo" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="dataAluno">Data de nascimento:</label>
-                        <input type="date" id="dataAluno" name="dataNascimento" pattern="(0[1-9]|[12][0-9]|3[01])\/(0[1-9]|1[0-2])\/(1975|2025)\d{2}" placeholder="Digite sua data de nascimento" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="sexoAluno">Sexo:</label>
-                        <select id="sexo" name="sexo" required>
-                            <option value=""></option>
-                            <option value="masculino">Masculino</option>
-                            <option value="feminino">Feminino</option>
-                            <option value="outro">Outro</option>
-                            <option value="não me identificar">Não Identificar</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="cpfAluno">CPF:</label>
-                        <input type="text" id="cpfAluno" name="cpf" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" placeholder="Digite o CPF do aluno" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="rg">RG:</label>
-                        <input type="text" id="rg" name="rg" pattern="[A-Za-z0-9.-]+" placeholder="Digite o seu RG" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="enderecoAluno">Endereço do Aluno</label>
-                        <select id="enderecoestados" required>
-                            <option value="">Selecione o Estado</option>
-                            <option value="AC">ACRE</option>
-                            <option value="AL">ALAGOAS</option>
-                            <option value="AP">AMAPÁ</option>
-                            <option value="AM">AMAZONAS</option>
-                            <option value="BA">BAHIA</option>
-                            <option value="CE">CEARÁ</option>
-                            <option value="DF">DISTRITO FEDERAL</option>
-                            <option value="ES">ESPIRITO SANTO</option>
-                            <option value="GO">GOÁIS</option>
-                            <option value="MA">MARANHÃO</option>
-                            <option value="MT">MATO GROSSO</option>
-                            <option value="MS">MATO GROSSO DO SUL</option>
-                            <option value="MG">MINAS GERAIS</option>
-                            <option value="PA">PARÁ</option>
-                            <option value="PB">PARAÍBA</option>
-                            <option value="">Selecione o Estado</option>
-                            <option value="PR">PARANÁ</option>
-                            <option value="PE">PERNAMBUCO</option>
-                            <option value="PI">PIAUÍ</option>
-                            <option value="RJ">RIO DE JANEIRO</option>
-                            <option value="RN">RIO GRANDE DO SUL</option>
-                            <option value="RO">RONDÔNIA</option>
-                            <option value="RR">RORAIMA</option>
-                            <option value="SC">SANTA CATARINA</option>
-                            <option value="SP">SÃO PAULO</option>
-                            <option value="TO">TOCANTINS</option>
-
-                        </select>
-                        <input type="text" id="enderecocidade" required placeholder="Digite o nome da sua Cidade">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="enderecocep">Digite seu CEP:</label>
-                        <input type="text" id="enderecocep" name="cep" pattern="^\d{5}-\d{3}$" placeholder="00000-000" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="telefoneAluno">Telefone:</label>
-                        <input type="tel" id="telefone" name="telefone" pattern="\+?[0-9-]{8,15}" placeholder="Digite o seu numero de telefone" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="emailAluno">E-mail:</label>
-                        <input type="text" id="email" name="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA--Z]{2,}" placeholder="Digite seu E-mail" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="nacionalidade">Nacionalidade:</label>
-                        <input type="text" id="nacionalidade" name="nacionalidade" placeholder="" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="nomeResponsavel">Nome dos pais ou responsáveis:</label>
-                        <input type="text" id="nomeResponsavel" name="nomeResponsavel" placeholder="Se você for maior, apenas ignore esse campo">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="estadoCivil">Estado civil:</label>
-                        <select id="estadoCivil" name="estadoCivil" required>
-                            <option value=""></option>
-                            <option value="solteiro">Solteiro(a)</option>
-                            <option value="casado">Casado(a)</option>
-                            <option value="divorciado">Divorciado(a)</option>
-                            <option value="viuvo">Viúvo(a)</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="acessibilidadeAluno">Necessidades especiais ou acessibilidade:</label>
-                        <select id="acessibilidadeAluno" name="acessibilidade" required>
-                            <option value=""></option>
-                            <option value="sim">Sim</option>
-                            <option value="não">Não</option>
-                        </select>
-                    </div>
-                </fieldset>
-
-                <fieldset>
-                    <legend>Informações Acadêmicas</legend>
-
-                    <div class="form-group">
-                        <label for="curso">Curso:</label>
-                        <select id="curso" name="curso" required>
-                            <option value=""></option>
-                            <option value="MATT001">MATT001</option>
-                            <option value="MATT002">MATT002</option>
-                            <option value="MATT003">MATT003</option>
-                            <option value="Garoto de Programa">Garoto de Programa</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="turno">Turno de estudo:</label>
-                        <select id="turno" name="turno" required>
-                            <option value="manhã">Manhã</option>
-                            <option value="tarde">Tarde</option>
-                            <option value="noite">Noite</option>
-                        </select>
-                    </div>
-                </fieldset>
-
-                <fieldset>
-                    <legend>Documentação e Anexos</legend>
-
-                    <div class="form-group">
-                        <label for="documentos">Cópias de documentos pessoais:</label>
-                        <input type="file" id="documentos" name="documentos" accept="image/*, .pdf" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="historico">Histórico escolar (se aplicável):</label>
-                        <input type="file" id="historico" name="historico" accept=".pdf">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="comprovantePagamento">Comprovante de pagamento da matrícula:</label>
-                        <input type="file" id="comprovantePagamento" name="comprovantePagamento" accept=".pdf, image/*" required>
-                    </div>
-                </fieldset>
+            <fieldset>
+                <legend>Dados Pessoais</legend>
 
                 <div class="form-group">
-                    <input type="submit" value="Enviar Matrícula">
+                    <label for="nomeAluno">Nome completo:</label>
+                    <input type="text" id="nomeAluno" name="nome" pattern="[A-Za-záàãâéêíóôõúçÁÀÃÂÉÊÍÓÔÕÚÇ\s]+" placeholder="Digite o seu nome completo" required>
                 </div>
-            </form>
-        </section>
+
+                <div class="form-group">
+                    <label for="dataAluno">Data de nascimento:</label>
+                    <input type="date" id="dataAluno" name="dataNascimento" pattern="(0[1-9]|[12][0-9]|3[01])\/(0[1-9]|1[0-2])\/(1975|2025)\d{2}" placeholder="Digite sua data de nascimento" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="sexoAluno">Sexo:</label>
+                    <select id="sexo" name="sexo" required>
+                        <option value=""></option>
+                        <option value="masculino">Masculino</option>
+                        <option value="feminino">Feminino</option>
+                        <option value="outro">Outro</option>
+                        <option value="não me identificar">Não Identificar</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="cpfAluno">CPF:</label>
+                    <input type="text" id="cpfAluno" name="cpf" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" placeholder="Digite o CPF do aluno" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="rg">RG:</label>
+                    <input type="text" id="rg" name="rg" pattern="[A-Za-z0-9.-]+" placeholder="Digite o seu RG" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="enderecoAluno">Endereço do Aluno</label>
+                    <select id="enderecoestados" required>
+                        <option value="">Selecione o Estado</option>
+                        <option value="AC">ACRE</option>
+                        <option value="AL">ALAGOAS</option>
+                        <option value="AP">AMAPÁ</option>
+                        <option value="AM">AMAZONAS</option>
+                        <option value="BA">BAHIA</option>
+                        <option value="CE">CEARÁ</option>
+                        <option value="DF">DISTRITO FEDERAL</option>
+                        <option value="ES">ESPIRITO SANTO</option>
+                        <option value="GO">GOÁIS</option>
+                        <option value="MA">MARANHÃO</option>
+                        <option value="MT">MATO GROSSO</option>
+                        <option value="MS">MATO GROSSO DO SUL</option>
+                        <option value="MG">MINAS GERAIS</option>
+                        <option value="PA">PARÁ</option>
+                        <option value="PB">PARAÍBA</option>
+                        <option value="">Selecione o Estado</option>
+                        <option value="PR">PARANÁ</option>
+                        <option value="PE">PERNAMBUCO</option>
+                        <option value="PI">PIAUÍ</option>
+                        <option value="RJ">RIO DE JANEIRO</option>
+                        <option value="RN">RIO GRANDE DO SUL</option>
+                        <option value="RO">RONDÔNIA</option>
+                        <option value="RR">RORAIMA</option>
+                        <option value="SC">SANTA CATARINA</option>
+                        <option value="SP">SÃO PAULO</option>
+                        <option value="TO">TOCANTINS</option>
+                    </select>
+                    <input type="text" id="enderecocidade" required placeholder="Digite o nome da sua Cidade">
+                </div>
+
+                <div class="form-group">
+                    <label for="enderecocep">Digite seu CEP:</label>
+                    <input type="text" id="enderecocep" name="cep" pattern="^\d{5}-\d{3}$" placeholder="00000-000" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="telefoneAluno">Telefone:</label>
+                    <input type="tel" id="telefone" name="telefone" pattern="\+?[0-9-]{8,15}" placeholder="Digite o seu numero de telefone" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="emailAluno">E-mail:</label>
+                    <input type="text" id="email" name="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA--Z]{2,}" placeholder="Digite seu E-mail" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="nacionalidade">Nacionalidade:</label>
+                    <input type="text" id="nacionalidade" name="nacionalidade" placeholder="" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="nomeResponsavel">Nome dos pais ou responsáveis:</label>
+                    <input type="text" id="nomeResponsavel" name="nomeResponsavel" placeholder="Se você for maior, apenas ignore esse campo">
+                </div>
+
+                <div class="form-group">
+                    <label for="estadoCivil">Estado civil:</label>
+                    <select id="estadoCivil" name="estadoCivil" required>
+                        <option value=""></option>
+                        <option value="solteiro">Solteiro(a)</option>
+                        <option value="casado">Casado(a)</option>
+                        <option value="divorciado">Divorciado(a)</option>
+                        <option value="viuvo">Viúvo(a)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="acessibilidadeAluno">Necessidades especiais ou acessibilidade:</label>
+                    <select id="acessibilidadeAluno" name="acessibilidade" required>
+                        <option value=""></option>
+                        <option value="sim">Sim</option>
+                        <option value="não">Não</option>
+                    </select>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Informações Acadêmicas</legend>
+
+            <div class="form-group">
+                <label for="curso">Curso:</label>
+                <select id="curso" name="curso" required>
+                    <option value=""></option>
+                    <option value="MATT001">MATT001</option>
+                    <option value="MATT002">MATT002</option>
+                    <option value="MATT003">MATT003</option>
+                    <option value="Garoto de Programa">Garoto de Programa</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="turno">Turno de estudo:</label>
+                <select id="turno" name="turno" required>
+                    <option value="manhã">Manhã</option>
+                    <option value="tarde">Tarde</option>
+                    <option value="noite">Noite</option>
+                </select>
+            </div>
+        </fieldset>
+
+        <fieldset>
+                <legend>Documentação e Anexos</legend>
+            <div class="form-group">
+                <label for="documentos">Cópias de documentos pessoais:</label>
+                <input type="file" id="documentos" name="documentos" accept="image/*, .pdf" required>
+            </div>
+
+            <div class="form-group">
+                <label for="historico">Histórico escolar (se aplicável):</label>
+                <input type="file" id="historico" name="historico" accept=".pdf">
+            </div>
+
+            <div class="form-group">
+                <label for="comprovantePagamento">Comprovante de pagamento da matrícula:</label>
+                <input type="file" id="comprovantePagamento" name="comprovantePagamento" accept=".pdf, image/*" required>
+            </div>
+        </fieldset>
+
+        <div class="form-group">
+            <input type="submit" value="Enviar Matrícula">
+        </div>
+    </form>
+</section>
 <!------------------------------------------------------------------------------------------------------------------------>
-<!--CADASTRO DE DISCIPLINA-->
+<!--CADASTRO DE PROFESSORES-->
+<section id="formularioProfessor">
+    <div class="container">
+        <h1>Cadastro de Professor</h1>
+        <form id="formCadastro" onsubmit="return validarFormulario(event)">
+            <div class="campo">
+                <label for="nome">Nome completo:</label>
+                <input type="text" id="nome" name="nome" required>
+            </div>
+
+            <div class="campo">
+                <label for="dataNascimento">Data de nascimento:</label>
+                <input type="date" id="dataNascimento" name="dataNascimento" required>
+            </div>
+
+            <div class="campo">
+                <label for="cpf">CPF:</label>
+                <input type="text" id="cpf" name="cpf" required>
+            </div>
+
+            <div class="campo">
+                <label for="rg">RG:</label>
+                <input type="text" id="rg" name="rg" required>
+            </div>
+
+            <div class="campo">
+                <label for="endereco">Endereço completo:</label>
+                <input type="text" id="endereco" name="endereco" required>
+            </div>
+
+            <div class="campo">
+                <label for="telefone">Número de telefone:</label>
+                <input type="tel" id="telefone" name="telefone" required>
+            </div>
+
+            <div class="campo">
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <!-- Novo campo de senha -->
+            <div class="campo">
+                <label for="senha">Senha:</label>
+                <input type="password" id="senha" name="senha" required>
+            </div>
+
+            <div class="campo">
+                <label>Disciplinas:</label>
+                <div class="accordion">
+                    <button type="button" class="accordion-btn">
+                        <span id="iconAccordion">+</span> Selecione as Disciplinas
+                    </button>
+                    <div class="accordion-content">
+                        <label><input type="checkbox" name="disciplinas" value="MAT01"> MAT01</label>
+                        <label><input type="checkbox" name="disciplinas" value="MAT02"> MAT02</label>
+                        <label><input type="checkbox" name="disciplinas" value="MAT03"> MAT03</label>
+                        <label><input type="checkbox" name="disciplinas" value="MAT04"> MAT04</label>
+                        <label><input type="checkbox" name="disciplinas" value="MAT05"> MAT05</label>
+                        <label><input type="checkbox" name="disciplinas" value="MAT06"> MAT06</label>
+                        <label><input type="checkbox" name="disciplinas" value="MAT07"> MAT07</label>
+                        <label><input type="checkbox" name="disciplinas" value="MAT08"> MAT08</label>
+                        <label><input type="checkbox" name="disciplinas" value="MAT09"> MAT09</label>
+                        <label><input type="checkbox" name="disciplinas" value="MAT10"> MAT10</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="campo">
+                <label for="regimeContratacao">Regime de contratação:</label>
+                <select id="regimeContratacao" name="regimeContratacao" required>
+                    <option value="CLT">CLT</option>
+                    <option value="Estatutário">Estatutário</option>
+                    <option value="Contrato de Trabalho">Contrato de Trabalho</option>
+                    <option value="Outros">Outros</option>
+                </select>
+            </div>
+
+            <button type="submit">Cadastrar</button>
+        </form>
+        <div class="search-section">
+            <h3>Buscar Professor</h3>
+            <div class="search-input">
+                <input type="text" id="searchInput" placeholder="Nome, Email, Telefone">
+                <button onclick="buscarAluno()">Buscar</button>
+            </div>
+        </div>
+
+        <div class="students-list">
+            <h3>Lista de Professores</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Email</th>
+                        <th>Telefone</th>
+                        <th>ações</th>
+                        <tr>professores cadastrados</tr>
+                    </tr>
+                </thead>
+                <tbody id="tabelaAlunos"></tbody>
+            </table>
+        </div>
+    </div>
+</section>
+<!------------------------------------------------------------------------------------------------------------------------>
+<!--CADASTRO DE DISCIPLINAS-->
 <section id="formularioDisciplina">
     <div class="container">
         <h1>Cadastro de Matéria</h1>
@@ -248,9 +354,54 @@
     </div>
 </section>
 <!------------------------------------------------------------------------------------------------------------------------>
+<!--CADASTRO DE TURMAS-->
+<section id="formularioTurma">
+    <div class="container">
+        <h2>Cadastro de Sala, Professor e Alunos</h2>
+        
+        <form id="formCadastro">
+    
+            <!-- Seção de Cadastro de Sala -->
+            <div class="section">
+                <h3>Cadastro de Sala</h3>
+                <label for="nomeSala">Nome da Sala</label>
+                <input type="text" id="nomeSala" name="nomeSala" required>
+    
+                <label for="capacidadeSala">Capacidade da Sala (mínimo 10, máximo 30)</label>
+                <input type="number" id="capacidadeSala" name="capacidadeSala" required min="10" max="30">
+            </div>
+    
+            <!-- Seção de Cadastro de Professor -->
+            <div class="section">
+                <h3>Cadastro de Professor</h3>
+                <label for="nomeProfessor">Nome do Professor</label>
+                <input type="text" id="nomeProfessor" name="nomeProfessor" required>
+    
+                <label for="emailProfessor">E-mail do Professor</label>
+                <input type="text" id="emailProfessor" name="emailProfessor" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA--Z]{2,}"  placeholder="Digite seu E-mail"required>
+            </div>
+            <!-- Seção de Cadastro de Alunos -->
+            <div class="section">
+                <h3>Cadastro de Alunos</h3>
+                <label for="quantidadeAlunos">Número de Alunos (mínimo 10, máximo 30)</label>
+                <input type="number" id="quantidadeAlunos" name="quantidadeAlunos" required min="10" max="30">
+    
+                <div id="listaAlunos">
+                    <!-- Lista de campos de alunos será gerada aqui -->
+                </div>
+            </div>
+    
+            <button type="submit">Cadastrar</button>
+        </form>
+    
+        <div id="message" class="message"></div>
+    </div>
+</section>
+<!------------------------------------------------------------------------------------------------------------------------>
 <!--RODAPÉ-->
     <footer>
-        <div class="footer-container">
+        <div class="footer-container" id="rodape">
+            <img src="./Img/rodape.jpeg" alt="">
             &copy; Copyrigh NEOSEducation. 
             Todos os direitos reservados.
         </div>
