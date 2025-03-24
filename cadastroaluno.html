@@ -5,14 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de Alunos</title>
     <link rel="stylesheet" href="Styles/cadastroaluno.css"> 
+    <script src="js/cadastroaluno.js"></script>
 </head>
 <header>
     <div class="header-container">
         <h1>NEOS Education</h1>
         <nav>
             <ul>
-                <li><a href="alunosecretaria.html">Início</a></li>
-                <li><a href="NEOS">Sobre</a></li>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="alunosecretaria.html"></a>Secretaria</li>
                 <li><a href="Contato">Contato</a></li>
             </ul>
         </nav>
@@ -117,13 +118,19 @@
 
                     <div class="form-group">
                         <label for="nacionalidade">Nacionalidade:</label>
-                        <input type="text" id="nacionalidade" name="nacionalidade" placeholder="" required>
+                        <input type="text" id="nacionalidade" name="nacionalidade" placeholder="Pais no qual você nasceu " required>
                     </div>
 
                     <div class="form-group">
-                        <label for="nomeResponsavel">Nome dos pais ou responsáveis:</label>
-                        <input type="text" id="nomeResponsavel" name="nomeResponsavel" placeholder="Se você for maior, apenas ignore esse campo">
+                            <label for="nomeResponsavel1">Nome dos Pais ou responsável:</label>
+                            <input type="text" id="nomeResponsavel1" name="nomeResponsavel1" placeholder="Nome do primeiro responsável (se houver)" required>
                     </div>
+                        
+                    <div class="form-group">
+                            <label for="nomeResponsavel2">Nome dos Pais ou responsável:</label>
+                            <input type="text" id="nomeResponsavel2" name="nomeResponsavel2" placeholder="Nome do segundo responsável (se houver)" required>
+                    </div>
+                        
 
                     <div class="form-group">
                         <label for="estadoCivil">Estado civil:</label>
@@ -153,16 +160,17 @@
                         <label for="curso">Curso:</label>
                         <select id="curso" name="curso" required>
                             <option value=""></option>
-                            <option value="MATT001">MATT001</option>
-                            <option value="MATT002">MATT002</option>
-                            <option value="MATT003">MATT003</option>
-                            <option value="Garoto de Programa">Garoto de Programa</option>
+                            <option value="CEO of Coxinha">MATT001</option>
+                            <option value="Sonegação De Imposto">MATT002</option>
+                            <option value="Golpe de Telefone">MATT003</option>
+                            <option value="Garoto de Programa">MATT004</option>
                         </select>
                     </div>
 
                     <div class="form-group">
                         <label for="turno">Turno de estudo:</label>
                         <select id="turno" name="turno" required>
+                            <option value=""></option>
                             <option value="manhã">Manhã</option>
                             <option value="tarde">Tarde</option>
                             <option value="noite">Noite</option>
@@ -203,11 +211,10 @@
                 <ul>
                     <li><a href="#">Política de Privacidade</a></li>
                     <li><a href="#">Redes Sociais</a></li>
-                    <li><a href="40028922">Contato</a></li>
+                    <li><a href="#">Contato</a></li>
                 </ul>
             </nav>
         </div>
     </footer>
 </body>
 </html>
-
